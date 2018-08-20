@@ -1544,7 +1544,7 @@ jobs:
     - get: gpdb_src
       passed: [gate_icw_start]
     - get: bin_gpdb
-      resource: bin_gpdb_centos6
+      resource: bin_gpdb_centos7
       passed: [gate_icw_start]
       trigger: [[ test_trigger ]]
     - get: oracle-gpdb-test-7
@@ -1695,12 +1695,12 @@ jobs:
       trigger: true
     - get: bin_gpdb_centos6
       passed:
-      - icw_planner_ictcp_oracle7
       - icw_extensions_gpcloud
       - QP_memory-accounting
       - QP_optimizer-functional
     - get: bin_gpdb_centos7
       passed:
+      - icw_planner_ictcp_oracle7
       - icw_gporca_oracle7
       - icw_planner_oracle7
 {% if pipeline_type == "prod" %}
